@@ -1,0 +1,29 @@
+$grid-gutter-width: 30px !default;
+$container-sm: (720px + $grid-gutter-width) !default;
+$container-md: (940px + $grid-gutter-width) !default;
+$container-lg: (1140px + $grid-gutter-width) !default;
+$screen-sm: 768px !default;
+$screen-md: 992px !default;
+$screen-lg: 1200px !default;
+
+html, body, ul, ol 
+  margin: 0
+  padding: 0
+
+body
+  font: 100% Helvetica, sans-serif
+  background-color: #efefef
+
+.App
+  margin-right: auto
+  margin-left: auto
+
+  @media (min-width: $screen-sm) 
+    width: $container-sm
+  
+  @media (min-width: $screen-md) 
+    width: $container-md
+  
+  @media (min-width: $screen-lg) 
+    width: $container-lg
+  
