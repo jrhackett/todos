@@ -1,15 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Checkbox from './Checkbox'
+import '../styles/Todo.css'
 
 const Todo = ({ onClick, completed, text }) => (
-  <li
-    onClick={onClick}
-    style={{
-      textDecoration: completed ? 'line-through' : 'none'
-    }}
-  >
-    {text}
-  </li>
+  <div>
+    <li
+      style={{
+        textDecoration: completed ? 'line-through' : 'none'
+      }}
+    >
+      {text}
+    </li>
+    <Checkbox onClick={onClick} completed={completed} />
+  </div>
 )
 
 Todo.propTypes = {
