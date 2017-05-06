@@ -4,7 +4,7 @@ import Checkbox from './Checkbox'
 import '../styles/Todo.css'
 
 const Todo = ({ onClick, completed, text }) => (
-  <div>
+  <div className="todo">
     <li
       style={{
         textDecoration: completed ? 'line-through' : 'none'

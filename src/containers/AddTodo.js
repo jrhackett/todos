@@ -7,7 +7,7 @@ let AddTodo = ({ dispatch }) => {
   let input
 
   return (
-    <div>
+    <div className="addtodo">
       <form className="new-task" onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
@@ -16,9 +16,12 @@ let AddTodo = ({ dispatch }) => {
         dispatch(addTodo(input.value))
         input.value = ''
       }}>
-        <input ref={node => {
-          input = node
-        }} />
+        <input 
+          ref={node => {
+            input = node
+          }}
+          placeholder="Add task & push enter"  
+        />
         <input hidden type="submit"/>
       </form>
     </div>
