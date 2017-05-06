@@ -21,7 +21,6 @@ const todo = (state, action) => {
 }
 
 const todos = (state = [], action) => {
-  console.log(state)
   switch (action.type) {
     case 'ADD_TODO':
       let id = Math.max(...state.map(o => o.id))
