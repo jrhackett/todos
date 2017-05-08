@@ -26,10 +26,10 @@ const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       let id = Math.max(...state.map(o => o.id))
-      action.id = id >= 0 ? id + 1 : 0
+      id = id >= 0 ? id + 1 : 0
       return [
         ...state,
-        todo(undefined, action)
+        todo(undefined, { ...action, id: id })
       ]
     case 'TOGGLE_TODO':
       return state.map(t =>
