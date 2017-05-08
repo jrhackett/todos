@@ -15,6 +15,8 @@ const todo = (state, action) => {
         ...state,
         completed: !state.completed
       }
+    case 'REMOVE_TODO':
+      return state.id !== action.id
     default:
       return state
   }
@@ -34,9 +36,9 @@ const todos = (state = [], action) => {
         todo(t, action)
       )
     case 'REMOVE_TODO':
-      return state.filter(t => {
-        return t.id !== action.id
-      })
+      return state.filter(t =>
+        todo(t, action)
+      )
     default:
       return state
   }
