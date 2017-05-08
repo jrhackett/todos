@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Checkbox from './Checkbox'
 import '../styles/Todo.css'
 
-const Todo = ({ onClick, completed, text }) => (
+const Todo = ({ onClick, completed, text, onRemove }) => (
   <div className="todo">
     <li
       style={{
@@ -12,6 +12,7 @@ const Todo = ({ onClick, completed, text }) => (
     >
       {text}
     </li>
+    <button onClick={onRemove}>Remove Todo</button>
     <Checkbox onClick={onClick} completed={completed} />
   </div>
 )

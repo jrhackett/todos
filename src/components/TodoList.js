@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Todo from './Todo'
 import '../styles/TodoList.css'
 
-const TodoList = ({ todos, onTodoClick }) => (  
+const TodoList = ({ todos, onTodoClick, onRemove }) => (  
   <div className="container todolist">                                      
     <ul>
       {todos.map(todo =>
@@ -11,6 +11,7 @@ const TodoList = ({ todos, onTodoClick }) => (
           key={todo.id}
           {...todo}
           onClick={() => onTodoClick(todo.id)}
+          onRemove={() => onRemove(todo.id)}
         />
       )}
     </ul>
@@ -23,7 +24,8 @@ TodoList.propTypes = {
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  onTodoClick: PropTypes.func.isRequired
+  onTodoClick: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired
 }
 
 export default TodoList
