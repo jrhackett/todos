@@ -5,12 +5,15 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import App from './components/App'
 import reducer from './reducers'
+import { loadState, saveState } from './localStorage'
 
-const persistedState = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : {}
+const persistedState = loadState()
 const store = createStore(reducer, persistedState)
 
 store.subscribe(() => {
-  localStorage.setItem('todos', JSON.stringify(store.getState()))
+  saveState({
+    todos: store.getState().todos
+  })
 })
 
 render(
