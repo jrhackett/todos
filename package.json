@@ -10,11 +10,12 @@
     "npm-run-all": "^4.0.2"
   },
   "dependencies": {
+    "node-uuid": "^1.4.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
-    "redux": "^3.6.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "redux": "^3.6.0"
   },
   "scripts": {
     "build-css": "node-sass src/styles -o src/styles",
