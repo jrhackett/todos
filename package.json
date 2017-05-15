@@ -10,6 +10,7 @@
     "npm-run-all": "^4.0.2"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "node-uuid": "^1.4.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
